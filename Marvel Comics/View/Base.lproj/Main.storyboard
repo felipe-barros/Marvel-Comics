@@ -8,40 +8,52 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First Screen View Controller-->
+        <!--Hero List View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="FirstScreenViewController" customModule="Marvel_Comics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HeroListViewController" customModule="Marvel_Comics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MV7-0B-2Ft">
-                                <rect key="frame" x="156.5" y="432.5" width="101.5" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Next screen"/>
-                                <connections>
-                                    <segue destination="Ln9-lo-syJ" kind="show" id="sw7-DV-fus"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nkv-x1-7WR">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeroListCell" id="6CL-4x-LsH">
+                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6CL-4x-LsH" id="C1h-Fz-1Rw">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="MV7-0B-2Ft" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="DE9-2b-CKW"/>
-                            <constraint firstItem="MV7-0B-2Ft" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="tkV-sT-u7b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nkv-x1-7WR" secondAttribute="bottom" id="6Hk-f2-QPg"/>
+                            <constraint firstItem="Nkv-x1-7WR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QlB-s5-PUP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nkv-x1-7WR" secondAttribute="trailing" id="Yry-zJ-ovN"/>
+                            <constraint firstItem="Nkv-x1-7WR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="auh-DA-jtd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="diA-Aq-l5J"/>
+                    <connections>
+                        <outlet property="tableView" destination="Nkv-x1-7WR" id="VHg-Ku-CEi"/>
+                        <segue destination="Ln9-lo-syJ" kind="show" identifier="HeroDetailViewController" id="LR0-1m-dCU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="955.07246376811599" y="69.642857142857139"/>
         </scene>
-        <!--Second View Controller-->
+        <!--Hero Detail View Controller-->
         <scene sceneID="a81-aL-o0a">
             <objects>
-                <viewController id="Ln9-lo-syJ" customClass="SecondViewController" customModule="Marvel_Comics" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ln9-lo-syJ" customClass="HeroDetailViewController" customModule="Marvel_Comics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="suu-61-v1u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
