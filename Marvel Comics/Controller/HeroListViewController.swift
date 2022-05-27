@@ -11,16 +11,16 @@ class HeroListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     let heroes = [
-        "Black Widow",
-        "Captain America",
-        "Iron Man",
-        "Dr. Strange",
-        "Hulk",
-        "Ant-man",
-        "Thor",
-        "Spider-Man",
-        "Black Panther",
-        "Silver Surfer"
+        Hero(name: "Black Widow", image: "heart.fill", description: "Hero description"),
+        Hero(name: "Captain America", image: "pills.fill", description: "Hero description"),
+        Hero(name: "Iron Man", image: "ear.fill", description: "Hero description"),
+        Hero(name: "Dr. Strange", image: "flame.circle.fill", description: "Hero description"),
+        Hero(name: "Hulk", image: "bolt.circle.fill", description: "Hero description"),
+        Hero(name: "Ant-man", image: "hare.fill", description: "Hero description"),
+        Hero(name: "Thor", image: "tortoise.fill", description: "Hero description"),
+        Hero(name: "Spider-Man", image: "ant.circle.fill", description: "Hero description"),
+        Hero(name: "Black Panther", image: "leaf.circle.fill", description: "Hero description"),
+        Hero(name: "Silver Surfer", image: "pawprint.circle.fill", description: "Hero description")
     ]
 
     override func viewDidLoad() {
@@ -44,7 +44,8 @@ extension HeroListViewController: UITableViewDelegate {
         let hero = heroes[sender as! Int]
 
         let heroDetailVC = segue.destination as! HeroDetailViewController
-        heroDetailVC.title = hero
+        heroDetailVC.title = hero.name
+        heroDetailVC.heroDescription = hero.description
     }
     
 }
@@ -55,8 +56,9 @@ extension HeroListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let hero = heroes[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: HeroListCell.identifier, for: indexPath) as! HeroListCell
-        cell.configure(with: heroes[indexPath.row], imageName: "gear")
+        cell.configure(with: hero.name, imageName: hero.image)
         return cell
     }
     

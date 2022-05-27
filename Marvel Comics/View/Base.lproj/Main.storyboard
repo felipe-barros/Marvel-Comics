@@ -17,11 +17,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Nkv-x1-7WR">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Search by your favorite hero" id="96n-Hd-DHJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HeroListCell" id="6CL-4x-LsH">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="88.5" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6CL-4x-LsH" id="C1h-Fz-1Rw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
@@ -34,7 +39,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Nkv-x1-7WR" secondAttribute="bottom" id="6Hk-f2-QPg"/>
+                            <constraint firstAttribute="bottom" secondItem="Nkv-x1-7WR" secondAttribute="bottom" id="6Hk-f2-QPg"/>
                             <constraint firstItem="Nkv-x1-7WR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="QlB-s5-PUP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nkv-x1-7WR" secondAttribute="trailing" id="Yry-zJ-ovN"/>
                             <constraint firstItem="Nkv-x1-7WR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="auh-DA-jtd"/>
@@ -57,10 +62,27 @@
                     <view key="view" contentMode="scaleToFill" id="suu-61-v1u">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XU2-ud-uOs">
+                                <rect key="frame" x="12" y="152" width="390" height="710"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Zhp-Rk-gME"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XU2-ud-uOs" firstAttribute="top" secondItem="Zhp-Rk-gME" secondAttribute="top" constant="12" id="FSy-ro-dbN"/>
+                            <constraint firstItem="Zhp-Rk-gME" firstAttribute="trailing" secondItem="XU2-ud-uOs" secondAttribute="trailing" constant="12" id="UIA-eI-rLF"/>
+                            <constraint firstItem="XU2-ud-uOs" firstAttribute="leading" secondItem="Zhp-Rk-gME" secondAttribute="leading" constant="12" id="bSF-My-eOe"/>
+                            <constraint firstItem="Zhp-Rk-gME" firstAttribute="bottom" secondItem="XU2-ud-uOs" secondAttribute="bottom" id="kyL-UT-bLX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xuy-ci-qOw"/>
+                    <connections>
+                        <outlet property="heroDescriptionLabel" destination="XU2-ud-uOs" id="jeo-QW-iKr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mML-vW-kgn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

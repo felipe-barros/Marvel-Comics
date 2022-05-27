@@ -11,6 +11,9 @@ class HeroListCell: UITableViewCell {
     
     static let identifier = "HeroListCell"
     
+    @IBOutlet var heroImage: UIImageView!
+    @IBOutlet var heroName: UILabel!
+
     static func nib() -> UINib {
         return UINib(nibName: "HeroListCell", bundle: nil)
     }
@@ -21,18 +24,15 @@ class HeroListCell: UITableViewCell {
         
     }
     
-    @IBOutlet var heroImage: UIImageView!
-    @IBOutlet var heroName: UILabel!
-
     override func awakeFromNib() {
         super.awakeFromNib()
         heroImage.contentMode = .scaleAspectFit
+        heroImage.layer.cornerRadius = 6.0
+        heroImage.clipsToBounds = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
 }

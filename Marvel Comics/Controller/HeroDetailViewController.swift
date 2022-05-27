@@ -8,8 +8,12 @@
 import UIKit
 
 class HeroDetailViewController: UIViewController {
-
+    
+    var heroDescription: String?
+    @IBOutlet var heroDescriptionLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        heroDescriptionLabel.text = heroDescription
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1714FAC5284070B3007ED2C2 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1714FAC4284070B3007ED2C2 /* Hero.swift */; };
 		17150449283EFE560003A95E /* HeroListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17150447283EFE560003A95E /* HeroListCell.swift */; };
 		1715044A283EFE560003A95E /* HeroListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17150448283EFE560003A95E /* HeroListCell.xib */; };
 		178001A4283720E300B38DC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178001A3283720E300B38DC9 /* AppDelegate.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1714FAC4284070B3007ED2C2 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		17150447283EFE560003A95E /* HeroListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListCell.swift; sourceTree = "<group>"; };
 		17150448283EFE560003A95E /* HeroListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListCell.xib; sourceTree = "<group>"; };
 		178001A0283720E300B38DC9 /* Marvel Comics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marvel Comics.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1714FAC3284070A8007ED2C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1714FAC4284070B3007ED2C2 /* Hero.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		1732D80E283B1BFB00D3D55B /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 			children = (
 				178001A3283720E300B38DC9 /* AppDelegate.swift */,
 				178001A5283720E300B38DC9 /* SceneDelegate.swift */,
+				1714FAC3284070A8007ED2C2 /* Model */,
 				1732D80E283B1BFB00D3D55B /* Controller */,
 				1732D80F283B1C1000D3D55B /* View */,
 				178001AC283720E300B38DC9 /* Assets.xcassets */,
@@ -169,6 +180,7 @@
 				17150449283EFE560003A95E /* HeroListCell.swift in Sources */,
 				178001A4283720E300B38DC9 /* AppDelegate.swift in Sources */,
 				178001A6283720E300B38DC9 /* SceneDelegate.swift in Sources */,
+				1714FAC5284070B3007ED2C2 /* Hero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
